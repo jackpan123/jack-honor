@@ -15,9 +15,9 @@ pip install hdfs==2.3.0
 1. 如果使用的是Anaconda创建的虚拟环境的话，一定要注意pip命令的话，要使用虚拟环境下的pip命令，不然很容易产生模块找不到的错误的
 2. 我的命令行里面选用的是hdfs的版本的话，是根据我所使用的Hadoop HDFS的版本决定的，并不是越新越好的，比如我现在环境使用的是Hadoop HDFS 3.2.0 我查看到这个版本是2019年1月21号的时候发版的，所以在选择Python HDFS的包的时候，选择比它晚一些时候发版的包就可以了，这样可以尽量避免（不能百分百保证）包版本的差异导致的一些不兼容的问题，
 
-![image-20220312090513816](/Users/jackpan/JackPanDocuments/jack-doc/jack-honor/python/python-hdfs-client-usage/image-20220312090513816.png)
+![image-20220312090513816](./image-20220312090513816.png)
 
-![image-20220312091625649](/Users/jackpan/JackPanDocuments/jack-doc/jack-honor/python/python-hdfs-client-usage/image-20220312091625649.png)
+![image-20220312091625649](./image-20220312091625649.png)
 
 这样我们的基础环境就准备完成了
 
