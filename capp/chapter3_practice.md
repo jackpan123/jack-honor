@@ -147,3 +147,38 @@ uremdiv:
 	ret
 ```
 
+
+
+### 3.13
+
+A int cmpl
+
+B short cmpw
+
+C char cmpb
+
+D long double char* cmpq
+
+
+
+### 3.14
+
+A long double char* testq
+
+B short testw
+
+C char testb
+
+D int testl
+
+
+
+### 3.15
+
+A 0xE
+
+B 0xF3
+
+C  400543 400545
+
+D 4005f6
