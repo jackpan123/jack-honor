@@ -203,3 +203,23 @@ end:
 B
 
 因为这是采用了最短路径原则，当得出条件表达式的前面部分的结果，已经可以确定整个表达式的结果时，便不再进行后续的判断了。
+
+### 3.17
+
+```c
+long result;
+t = x < y;
+if (!t) {
+  goto false;
+}
+lt_cnt++;
+result = y - x;
+goto done;
+false:
+	ge_cnt++;
+  result = x - y;
+done:
+	return result;
+
+```
+
