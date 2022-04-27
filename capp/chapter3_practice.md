@@ -1,38 +1,40 @@
 ### 3.1
 
-| 操作数          | 值           |
-| --------------- | ------------ |
-| %rax            | 0x100        |
-| 0x104           | 0xAB         |
-| $0x108          | 264 或 0x108 |
-| (%rax)          | 0xFF         |
-| 4(%rax)         | 0xAB         |
-| 9(%rax, %rdx)   | 0x11         |
-| 260(%rcx, %rdx) | 0x13         |
-| 0xFC(, %rcx, 4) | 0xFF         |
-| (%rax, %rdx, 4) | 0x11         |
+| 操作数          | 值    |
+| --------------- | ----- |
+| %rax            | 0x100 |
+| 0x104           | 0xAB  |
+| $0x108          | 0x108 |
+| (%rax)          | 0xFF  |
+| 4(%rax)         | 0xAB  |
+| 9(%rax, %rdx)   | 0x11  |
+| 260(%rcx, %rdx) |       |
+| 0xFC(, %rcx, 4) |       |
+| (%rax, %rdx, 4) | 0xAB  |
 
 
+
+疑问：超出地址后会怎么样？
 
 ### 3.2
 
-movl %eax, (%rsp)
+movl
 
-movw (%rax), %dx
+movw
 
-movb $0xFF, %bl
+movb
 
-movb (%rsp, %rdx, 4), %dl
+movb
 
-movq (%rdx), %rax
+mobq
 
-movw %dx, (%rax)  %dx 的容量是1字 movw
+movw
 
 
 
 ### 3.3
 
-movb $0xF, (%ebx)  不能使用%ebx作为地址寄存器，这个寄存器由被调用者持有
+movb $0xF, (%ebx) 不能使用%ebx作为地址寄存器，这个寄存器由被调用者持有
 
 movl %rax, (%rsp) %rax存储位数超过32位 指令和寄存器大小不匹配
 
@@ -42,7 +44,7 @@ movb %al, %sl 寄存器不存在
 
 movq %rax, $0x123 mov指令的目标只能是内存地址或者是寄存器，不能是立即数
 
-movl %eax, %rdx  目的数的寄存器是不正确的，应该是%edx
+movl %eax, %rdx 目的数的寄存器是不正确的，应该是%edx
 
 movb %si，8(%rbp) %si是存放双字节的数据，单字节不够存放，指令和寄存器大小不匹配
 
@@ -148,85 +150,3 @@ uremdiv:
 ```
 
 
-
-### 3.13
-
-A int cmpl
-
-B short cmpw
-
-C char cmpb
-
-D long double char* cmpq
-
-
-
-### 3.14
-
-A long double char* testq
-
-B short testw
-
-C char testb
-
-D int testl
-
-
-
-### 3.15
-
-A 0xE
-
-B 0xF3
-
-C  400543 400545
-
-D 4005f6
-
-### 3.16
-
-A 
-
-```
-if (!p) {
-    goto end;
-}
-
-if (a <= *p) {
-   goto end;
-}
-*p = a;
-end:
-    return;
-```
-
-B
-
-因为这是采用了最短路径原则，当得出条件表达式的前面部分的结果，已经可以确定整个表达式的结果时，便不再进行后续的判断了。
-
-### 3.17
-
-A
-
-```c
-long result;
-t = x < y;
-if (!t) {
-  goto false;
-}
-lt_cnt++;
-result = y - x;
-goto done;
-false:
-	ge_cnt++;
-  result = x - y;
-done:
-	return result;
-
-```
-
-B
-
-首先需要表达简洁，可以一眼看的出来这个规则的意思
-
-性能需要好
