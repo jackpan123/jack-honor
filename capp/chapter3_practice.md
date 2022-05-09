@@ -149,4 +149,88 @@ uremdiv:
 	ret
 ```
 
+### 3.13
 
+A int   <
+
+B short >=
+
+C unsigned char <=
+
+D long >=
+
+### 3.14
+
+A long >=
+
+B short =
+
+C unsigned char >
+
+D int !=
+
+### 3.15
+
+A 0xe
+
+B 0xf3
+
+C 400543 400545
+
+D 4005f7
+
+
+
+### 3.16
+
+A
+
+```c
+
+if (p) {
+  goto done;
+}
+if (a >= *p) {
+  goto done;
+}
+*p = a;
+done:
+  return;
+```
+
+B 因为根据if的短路原则，如果一个条件的判断足够了，就会跳过不进行第二次判断。
+
+
+
+### 3.17
+
+A
+
+```c
+long result;
+if (x >= y)
+  goto x_ge_y;
+
+lt_cnt++;
+result = y - x;
+goto done;
+x_ge_y:
+  ge_cnt++;
+  result = x -y;
+done:
+  return result;
+```
+
+B 代码逻辑表达需要清晰，并且简洁。
+
+
+
+### 3.18
+
+long val = x + y + z
+
+x < -3
+
+y < z
+
+x > 2
