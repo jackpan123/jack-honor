@@ -227,10 +227,61 @@ B 代码逻辑表达需要清晰，并且简洁。
 
 ### 3.18
 
-long val = x + y + z
+```c
+long test(long x, long y, long z) {
+  long val = x + y + z;
+  if (x < -3) {
+    if (z < y) {
+      val = x * z;
+    } else {
+      val = y * z;
+    }
+  } else if (x > 4) {
+    val = x * z;
+  }
+}
+```
 
-x < -3
 
-y < z
 
-x > 2
+### 3.19
+
+A 30个时钟周期
+
+B 16 - 46个时钟周期
+
+
+
+### 3.20
+
+A  x /  8
+
+B 
+
+```
+arith:
+  leaq    7(%rdi), %rax  x + 7
+  testq   %rdi, %rdi x not equals negative
+  cmovns  %rdi, %rax 非负数进行移动
+  sarq    $3, %rax  向右边移动3位
+  ret
+```
+
+### 3.21
+
+```c
+long test(long x, long y) {
+  long val = 8 * x;
+  if (y) {
+    if (x > y) {
+      val = x - y;
+    } else {
+      val = y - x;
+    }
+  } else if (x  + y) {
+    
+  }
+  return val;
+}
+```
+
