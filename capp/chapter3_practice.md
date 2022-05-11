@@ -278,10 +278,66 @@ long test(long x, long y) {
     } else {
       val = y - x;
     }
-  } else if (x  + y) {
-    
+  } else if ( y <= -2) {
+    val = x + y
   }
   return val;
+}
+```
+
+
+
+### 3.22
+
+A n的最大值就是int的最大值
+
+B n的最大值就是long的最大值
+
+
+
+### 3.23
+
+A
+
+%rdi %rax 存放x
+
+%rcx存放 y
+
+%rdx 存放n
+
+B
+
+因为没有实质性的数据改变，所以这个两行代码可以直接去除了
+
+C
+
+2 将x值移动到寄存器%rax中
+
+3 将x值移动到寄存器%rcx中 
+
+4 y = x * x
+
+5 n = x + x = 2 * x
+
+7 x = x + y
+
+8 n--
+
+9,10 n > 0
+
+
+
+### 3.24
+
+```c
+long loop_while(long a, long b) {
+  long result = 1;
+  while (a < b) {
+    result = (x + y) * result;
+    a = a++;
+  }
+  
+  return result;
 }
 ```
 
