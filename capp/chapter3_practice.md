@@ -341,3 +341,15 @@ long loop_while(long a, long b) {
 }
 ```
 
+### 3.25
+
+```c
+long loop_while2(long a, long b) {
+  long result = b;
+  while (b > 0) {
+    result = a * b;
+    b = b - a;
+  }
+}
+```
+
