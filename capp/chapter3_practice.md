@@ -372,9 +372,43 @@ C 计算除以2的余数
 
 ### 3.27
 
+```c
+long fact_for_while(long n) {
+  long i = 2;
+  long result = 1;
+  while (i <= n) {
+    result *= i;
+    i++;
+  }
+  return result;
+}
+```
+
+Guarded-do
+
+```c
+long fact_for_goto(long n) {
+  long i = 2;
+  long result = 1;
+  if (i > n) {
+    goto done;
+  }
+  loop:
+    result *= i;
+    i++;
+    if (n <= i) {
+      goto loop;
+    }
+  done:
+    return result;
+}
+```
+
 
 
 ### 3.28
+
+
 
 ### 3.29
 
