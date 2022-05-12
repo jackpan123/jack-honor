@@ -406,7 +406,21 @@ long fact_for_goto(long n) {
 
 
 
-### 3.28
+### 3.28 (不会)
+
+```c
+long fun_b(unsigned long x) {
+  long val = 0;
+  long i;
+  for (i = 64, i > 0 ,i--) {
+    long temp = x
+    val = 2 * val;
+    x = x / 2;
+  }
+  
+  return val;
+}
+```
 
 
 
