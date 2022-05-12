@@ -355,9 +355,24 @@ long loop_while2(long a, long b) {
 
 ### 3.26
 
-逆向工程跳过
+```c
+long fun_a(unsigned long x) {
+  long val = 0;
+  while (x != 0) {
+    val = x;
+    x = x / 2;
+  }
+  return val
+}
+```
+
+A jump to the middle
+
+C 计算除以2的余数
 
 ### 3.27
+
+
 
 ### 3.28
 
