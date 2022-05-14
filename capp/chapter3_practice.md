@@ -62,9 +62,9 @@ movb %si，8(%rbp) %si是存放双字节的数据，单字节不够存放，指�
 | char          | int           | movsbl (%rdi), %eax <br>movl %eax, (%rsi) |
 | char          | unsigned      | movsbl (%rdi), %eax<br>movl %eax, (%rsi)  |
 | unsigned char | long          | movzbl (%rdi), %eax<br/>movq %eax, (%rsi) |
-| int           | char          | movl (%rdi), %eax<br>movb %al, (%sil)     |
-| unsigned      | unsigned char | movl (%edi), %eax<br/>movb %al, (%rsi)    |
-| char          | short         | movbw (%rsi), %ax<br/>movsbw %ax, (%rsi)  |
+| int           | char          | movl (%rdi), %eax<br>movb %al, (%rsi)     |
+| unsigned      | unsigned char | movl (%rdi), %eax<br/>movb %al, (%rsi)    |
+| char          | short         | movbw (%rdi), %ax<br/>movsbw %ax, (%rsi)  |
 
 
 
