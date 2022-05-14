@@ -426,5 +426,38 @@ long fun_b(unsigned long x) {
 
 ### 3.29
 
+A
+
+```c
+long sum = 0;
+long i = 0;
+while (i < 10) {
+  if (i & 1) {
+    continue;
+  }
+  sum += i;
+  i++;
+}
+```
+
+会产生无限循环。
+
+B
+
+```c
+long sum = 0;
+long i = 0;
+while (i < 10) {
+  if (i & 1) {
+    goto update;
+  }
+  sum += i;
+  update:
+   i++;
+}
+```
+
+
+
 ### 3.30
 
