@@ -193,10 +193,10 @@ A
 
 ```c
 
-if (p) {
+if (p == 0) {
   goto done;
 }
-if (a >= *p) {
+if (*p >= a) {
   goto done;
 }
 *p = a;
@@ -237,12 +237,12 @@ B 代码逻辑表达需要清晰，并且简洁。
 long test(long x, long y, long z) {
   long val = x + y + z;
   if (x < -3) {
-    if (z < y) {
-      val = x * z;
+    if (y < z) {
+      val = x * y;
     } else {
       val = y * z;
     }
-  } else if (x > 4) {
+  } else if (x > 2) {
     val = x * z;
   }
 }
@@ -278,11 +278,11 @@ arith:
 ```c
 long test(long x, long y) {
   long val = 8 * x;
-  if (y) {
-    if (x > y) {
-      val = x - y;
-    } else {
+  if (y > 0) {
+    if (x < y) {
       val = y - x;
+    } else {
+      val = y & x;
     }
   } else if ( y <= -2) {
     val = x + y
@@ -295,9 +295,9 @@ long test(long x, long y) {
 
 ### 3.22
 
-A n的最大值就是int的最大值
+A n的最大值就是int的最大值 6227020800
 
-B n的最大值就是long的最大值
+B n的最大值就是long的最大值 2432902008176640000
 
 
 
@@ -339,8 +339,8 @@ C
 long loop_while(long a, long b) {
   long result = 1;
   while (a < b) {
-    result = (x + y) * result;
-    a = a++;
+    result = (a + b) * result;
+    a = a+1;
   }
   
   return result;
@@ -353,7 +353,7 @@ long loop_while(long a, long b) {
 long loop_while2(long a, long b) {
   long result = b;
   while (b > 0) {
-    result = a * b;
+    result = a * result;
     b = b - a;
   }
 }
