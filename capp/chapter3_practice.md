@@ -486,3 +486,20 @@ A
 | F4   | 0x400555 | retq  | 9                    | 11   | 99   | 0x7fffffffe818 | 0x400565 | 返回结果       |
 | M2   | 0x400565 | mov   | 11                   | 11   | 99   | 0x7fffffffe820 | -        | 移动结果       |
 
+
+
+### 3.33
+
+```c
+int procprob(int a, short b ,long *u char *v) {
+  *u += a;
+  *v += b;
+  
+  return sizeof(a) + sizeof(b);
+}
+```
+
+返回值中6代码两个大小的和，确定a是int 4字节，b肯定是2字节 short
+
+### 3.34
+
