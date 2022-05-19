@@ -509,3 +509,19 @@ B a6 a7 存放在栈上偏移量为0 和8的地方
 
 因为局部变量的值的数量超过了被调用者保存的寄存器中，有些变量就只能存储在栈上了
 
+### 3.35
+
+A 存储x最先的值
+
+B 
+
+```c
+long rfun(unsigined long x) {
+  if (x == 0)
+    return 0;
+  unsigned long nx = x >> 2
+  return x += nx
+  
+}
+```
+
